@@ -1,0 +1,5 @@
+Hair color: orange
+Hair style: bald
+You are a: WAREWOLF
+Your health: 84
+You have a narly bite and scratch. You do 19 damage per attack.

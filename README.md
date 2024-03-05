@@ -30,3 +30,18 @@
 - Item 1
 - Item 2
 - Item 3
+
+Project requirements: 
+Variables
+
+Expressions
+
+Conditionals
+
+Loops
+
+Functions
+
+Classes
+
+Data structure from Java Collection Framework (such as ArrayList, TreeSet, or HashMap)
