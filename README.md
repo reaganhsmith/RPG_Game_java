@@ -34,14 +34,13 @@
 Project requirements: 
 Variables
 
-Expressions
+Expressions XX (maybe add more??)
 
-Conditionals
+Conditionals XX
 
-Loops
+Loops XX
 
-Functions
+Functions XX
 
-Classes
+Classes (maybe make another class for the game??)
 
-Data structure from Java Collection Framework (such as ArrayList, TreeSet, or HashMap)
