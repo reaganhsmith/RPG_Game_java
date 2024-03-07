@@ -1,0 +1,11 @@
+  public static void itemFound(Scanner scanner, ArrayList<String> characterInventory) {
+
+        int randomPath = new Random().nextInt(2) + 1;
+        if (randomPath == 1) {
+
+            
+        } else {
+
+        }
+
+    }

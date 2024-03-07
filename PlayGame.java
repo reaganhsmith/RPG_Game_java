@@ -16,7 +16,7 @@ public class PlayGame {
         System.out.println("Hello World!! Welcome to a very fun adventure game!");
         System.out.println(" ");
 
-        String gameInstructions = "For this game you get to design your own character and go through battles and follow a fun story line";
+        String gameInstructions = "For this game you get to design your own character and go through battles and follow a fun story line. You will collect items and at the end it will show your inventory.";
 
         System.out.println(gameInstructions);
         System.out.println(" ");
@@ -56,25 +56,96 @@ public class PlayGame {
             int choiceINT = Integer.parseInt(choice1);
             System.out.println(" ");
             if (choiceINT == 1) {
-                spiderEncounter(scanner, characterHp, characterDamage, characterInventory);
+                int spiderHp = new Random().nextInt((30 - 5) + 1) + 5;
+                spiderEncounter(scanner, characterHp, characterDamage, characterInventory, spiderHp);
                 System.out.println(
                         "After the spider encounter you decide to play it safe and stay away from the trees. You make your way to the stream but end up encountering a sleeping siren! Do you want to (1) Fight or (2) Run?");
                 int choice2 = Integer.parseInt(scanner.nextLine());
                 if (choice2 == 1) {
-                    sirenEncounter(scanner, characterHp, characterDamage, characterInventory);
+                    int sirenHP = new Random().nextInt((30 - 10) + 1) + 10;
+                    sirenEncounter(scanner, characterHp, characterDamage, characterInventory, sirenHP);
+
+                    System.out.println("You get across the siren and walk along the river for a while. You find a pile of rare seeds. Do you 1: Pick them up or 2: Keep going?");
+                    int choice3 = Integer.parseInt(scanner.nextLine());
+                    if(choice3 == 1){
+
+                        itemFound(scanner, characterInventory, characterHp, characterDamage);
+
+                    }else{
+                        System.out.println("You decide to keep walking. In the distance you see a empty cottage. Do you want to go in? 1: yes, 2: no");
+                        int choice4 = Integer.parseInt(scanner.nextLine());
+                        if(choice4 == 1){
+
+                        }else{
+
+                        }
+                    }
+
                 } else {
                     System.out.println("You tip toed across the sleeping siren without waking her.");
+
+                    System.out.println("You get across the siren and walk along the river for a while. You find a pile of rare seeds. Do you 1: Pick them up or 2: Keep going?");
+                    int choice3 = Integer.parseInt(scanner.nextLine());
+                    if(choice3 == 1){
+
+                        itemFound(scanner, characterInventory, characterHp, characterDamage);
+
+                    }else{
+                        System.out.println("You decide to keep walking. In the distance you see a empty cottage. Do you want to go in? 1: yes, 2: no");
+                        int choice4 = Integer.parseInt(scanner.nextLine());
+                        if(choice4 == 1){
+
+                        }else{
+
+                        }
+                    }
+
                 }
 
             } else {
-                System.out.println("You succesfully outran the Vampire spider. Your health is: ");
+                System.out.println("You succesfully outran the Vampire spider.");
                 System.out.println(
                         "After the spider encounter you decide to play it safe and stay away from the trees. You make your way to the stream but end up encountering a sleeping siren! Do you want to (1) Fight or (2) Run?");
                 int choice2 = Integer.parseInt(scanner.nextLine());
                 if (choice2 == 1) {
-                    sirenEncounter(scanner, characterHp, characterDamage, characterInventory);
+                    int sirenHP = new Random().nextInt((30 - 10) + 1) + 10;
+                    sirenEncounter(scanner, characterHp, characterDamage, characterInventory, sirenHP);
+
+                    System.out.println("You get across the siren and walk along the river for a while. You find a pile of rare seeds. Do you 1: Pick them up or 2: Keep going?");
+                    int choice3 = Integer.parseInt(scanner.nextLine());
+                    if(choice3 == 1){
+
+                        itemFound(scanner, characterInventory, characterHp, characterDamage);
+
+                    }else{
+                        System.out.println("You decide to keep walking. In the distance you see a empty cottage. Do you want to go in? 1: yes, 2: no");
+                        int choice4 = Integer.parseInt(scanner.nextLine());
+                        if(choice4 == 1){
+
+                        }else{
+
+                        }
+                    }
                 } else {
                     System.out.println("You quietly snuck past the sleeping siren");
+
+                    System.out.println("You get across the siren and walk along the river for a while. You find a pile of rare seeds. Do you 1: Pick them up or 2: Keep going?");
+                    int choice3 = Integer.parseInt(scanner.nextLine());
+                    if(choice3 == 1){
+
+                        itemFound(scanner, characterInventory, characterHp, characterDamage);
+
+                    }else{
+                        System.out.println("You decide to keep walking. In the distance you see a empty cottage. Do you want to go in? 1: yes, 2: no");
+                        int choice4 = Integer.parseInt(scanner.nextLine());
+                        if(choice4 == 1){
+
+                        }else{
+
+                        }
+                    }
+
+
                 }
             }
 
@@ -89,9 +160,121 @@ public class PlayGame {
 
     }
 
+    public static void itemFound(Scanner scanner, ArrayList<String> characterInventory, int characterHp, int characterDamage) {
+
+        int randomPath = new Random().nextInt(2) + 1;
+        if (randomPath == 1) {
+            System.out.println("OH NO!! It was a trap and giant rattlesnake jumps at you! will you 1: fight or 2: run?");
+            int choice4 = Integer.parseInt(scanner.nextLine());
+            if(choice4 == 1){
+                int snakeHp = new Random().nextInt((20 - 10) + 1) + 10;
+                snakeEncounter(scanner, characterHp, characterDamage, characterInventory, snakeHp);
+
+            }else{
+                System.out.println("You got away successfully and ");
+                int randomAmount = new Random().nextInt(20) + 1;
+                String specialSeeds;
+                if (randomAmount == 1) {
+                    specialSeeds = randomAmount + " magic seeds";
+                } else {
+                    specialSeeds = randomAmount + " magic seeds";
+                }
+                characterInventory.add(specialSeeds);
+
+                System.out
+                        .println("You picked up: "
+                                + specialSeeds);
+                System.out
+                        .println(" ");
+
+            }
+ 
+        } else {
+            int randomAmount = new Random().nextInt(20) + 1;
+                String specialSeeds;
+                if (randomAmount == 1) {
+                    specialSeeds = randomAmount + " seeds";
+                } else {
+                    specialSeeds = randomAmount + " seeds";
+                }
+                characterInventory.add(specialSeeds);
+
+                System.out
+                        .println("You picked up: "
+                                + specialSeeds);
+                System.out
+                        .println(" ");
+
+        }
+
+    }
+
+    public static void snakeEncounter(Scanner scanner, int characterHp, int characterDamage,
+            ArrayList<String> characterInventory, int snakeHP) {
+        int snakeAttack = new Random().nextInt((40 - 20) + 1) + 20;
+        int randomPath = new Random().nextInt(2) + 1;
+        if (randomPath == 1) {
+            System.out.println("The snake gets a nasty bite in. You can feel its venmo flowing through you.");
+            characterHp -= snakeAttack;
+            System.out.println("You now have: " + characterHp + " Health");
+            System.out.println("Its coiling up to attack again. Do you 1: fight back or 2: run for help?");
+            int path = Integer.parseInt(scanner.nextLine());
+            if (path == 1) {
+                snakeEncounter(scanner, characterHp, characterDamage, characterInventory, snakeHP);
+            } else {
+                randomPath = new Random().nextInt(2) + 1;
+                if (randomPath == 1) {
+                    System.out.println("You successfully got away from the snake!");
+                } else {
+                    System.out.println("Oh no you could NOT you were not fast enough!");
+                    snakeEncounter(scanner, characterHp, characterDamage, characterInventory, snakeHP);
+                }
+
+            }
+        } else {
+            snakeHP -= characterDamage;
+            System.out.println(
+                    "You got to the snake first and were able to do some damage. The snakes health is now " + snakeHP);
+
+            if (snakeHP > 0) {
+                System.out.println(
+                        "Wait! The snake is still alive and wants to keep fighting!! Would you like to (1) fight or (2) run?");
+                int path = Integer.parseInt(scanner.nextLine());
+
+                if (path == 1) {
+                    snakeEncounter(scanner, characterHp, characterDamage, characterInventory, snakeHP);
+                } else {
+                    randomPath = new Random().nextInt(2) + 1;
+                    if (randomPath == 1) {
+                        System.out.println("You have never ran so fast in your life! You were able to get away from the snake.");
+                    } else {
+                        System.out.println("You were too slow!");
+                        snakeEncounter(scanner, characterHp, characterDamage, characterInventory, snakeHP);
+                    }
+                }
+            } else {
+                int randomAmount = new Random().nextInt(7) + 1;
+                String snakeRattler;
+                if (randomAmount == 1) {
+                    snakeRattler = randomAmount + " snake rattle";
+                } else {
+                    snakeRattler = randomAmount + " snake rattles";
+                }
+                characterInventory.add(snakeRattler);
+
+                System.out
+                        .println("Congrats! You successfully defeated the Rattlesnake. You picked up: "
+                                + snakeRattler);
+                System.out
+                        .println(" ");
+
+            }
+        }
+
+    } 
+
     public static void sirenEncounter(Scanner scanner, int characterHp, int characterDamage,
-            ArrayList<String> characterInventory) {
-        int sirenHP = new Random().nextInt((80 - 50) + 1) + 50;
+            ArrayList<String> characterInventory, int sirenHP) {
         int sirenAttack = new Random().nextInt((30 - 5) + 1) + 5;
         int randomPath = new Random().nextInt(2) + 1;
         if (randomPath == 1) {
@@ -101,14 +284,14 @@ public class PlayGame {
             System.out.println("She looks ready for round 2... Would you like to (1) fight or (2) run?");
             int path = Integer.parseInt(scanner.nextLine());
             if (path == 1) {
-                sirenEncounter(scanner, characterHp, characterDamage, characterInventory);
+                sirenEncounter(scanner, characterHp, characterDamage, characterInventory, sirenHP);
             } else {
                 randomPath = new Random().nextInt(2) + 1;
                 if (randomPath == 1) {
                     System.out.println("You got away before the siren could attack again!!");
                 } else {
                     System.out.println("Oh no you could NOT you were not fast enough!");
-                    sirenEncounter(scanner, characterHp, characterDamage, characterInventory);
+                    sirenEncounter(scanner, characterHp, characterDamage, characterInventory, sirenHP);
                 }
 
             }
@@ -123,20 +306,20 @@ public class PlayGame {
                 int path = Integer.parseInt(scanner.nextLine());
 
                 if (path == 1) {
-                    sirenEncounter(scanner, characterHp, characterDamage, characterInventory);
+                    sirenEncounter(scanner, characterHp, characterDamage, characterInventory, sirenHP);
                 } else {
                     randomPath = new Random().nextInt(2) + 1;
                     if (randomPath == 1) {
                         System.out.println("You sprinted as fast as you could before the siren could get to you!");
                     } else {
                         System.out.println("Oh no you could NOT get away from the siren!");
-                        sirenEncounter(scanner, characterHp, characterDamage, characterInventory);
+                        sirenEncounter(scanner, characterHp, characterDamage, characterInventory, sirenHP);
                     }
                 }
             } else {
                 int randomAmount = new Random().nextInt(10) + 1;
                 String sirenTears;
-                if (randomAmount > 1) {
+                if (randomAmount == 1) {
                     sirenTears = randomAmount + " siren tear";
                 } else {
                     sirenTears = randomAmount + " siren tears";
@@ -144,7 +327,7 @@ public class PlayGame {
                 characterInventory.add(sirenTears);
 
                 System.out
-                        .println("Congrats! You successfully killed the sleeping siren. You picked up: "
+                        .println("Congrats! You successfully defeated the sleeping siren. You picked up: "
                                 + sirenTears);
                 System.out
                         .println(" ");
@@ -155,8 +338,8 @@ public class PlayGame {
     }
 
     public static void spiderEncounter(Scanner scanner, int characterHp, int characterDamage,
-            ArrayList<String> characterInventory) {
-        int spiderHP = new Random().nextInt((30 - 5) + 1) + 5;
+            ArrayList<String> characterInventory, int spiderHp) {
+
         int spiderAttack = new Random().nextInt((50 - 5) + 1) + 5;
 
         int randomPath = new Random().nextInt(2) + 1;
@@ -170,32 +353,32 @@ public class PlayGame {
             int path = Integer.parseInt(scanner.nextLine());
 
             if (path == 1) {
-                spiderEncounter(scanner, characterHp, characterDamage, characterInventory);
+                spiderEncounter(scanner, characterHp, characterDamage, characterInventory, spiderHp);
             } else {
                 randomPath = new Random().nextInt(2) + 1;
                 if (randomPath == 1) {
                     System.out.println("You got away before the spider could attack again!!");
                 } else {
-                    spiderEncounter(scanner, characterHp, characterDamage, characterInventory);
+                    spiderEncounter(scanner, characterHp, characterDamage, characterInventory, spiderHp);
                 }
 
             }
         } else {
-            spiderHP -= characterDamage;
-            System.out.println("You got a gnarly hit on the vampire spider. Its health is now " + spiderHP);
+            spiderHp -= characterDamage;
+            System.out.println("You got a gnarly hit on the vampire spider. Its health is now " + spiderHp);
 
-            if (spiderHP > 0) {
+            if (spiderHp > 0) {
                 System.out.println("The vampire spider is still ALIVE!! Would you like to (1) fight or (2) run?");
                 int path = Integer.parseInt(scanner.nextLine());
 
                 if (path == 1) {
-                    spiderEncounter(scanner, characterHp, characterDamage, characterInventory);
+                    spiderEncounter(scanner, characterHp, characterDamage, characterInventory, spiderHp);
                 } else {
                     randomPath = new Random().nextInt(2) + 1;
                     if (randomPath == 1) {
                         System.out.println("You got away before the spider could attack again!!");
                     } else {
-                        spiderEncounter(scanner, characterHp, characterDamage, characterInventory);
+                        spiderEncounter(scanner, characterHp, characterDamage, characterInventory, spiderHp);
                     }
                 }
             } else {
@@ -205,7 +388,7 @@ public class PlayGame {
                 characterInventory.add(vampSpider);
 
                 System.out
-                        .println("Congrats! You successfully killed the Vampire Spider. You picked up: "
+                        .println("Congrats! You successfully defeated the Vampire Spider. You picked up: "
                                 + vampSpider);
                 System.out
                         .println(" ");
