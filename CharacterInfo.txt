@@ -1,4 +1,4 @@
 Hair color: pink
 wizard
-Your health: 95
-You do: 14 damage
+Your health: 98
+You do: 9 damage

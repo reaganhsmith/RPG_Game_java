@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Timer;
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -28,6 +29,8 @@ public class PlayGame {
         ArrayList<String> characterInventory = new ArrayList<>();
         // REQ!! FUNCTION
         createAndDisplayCharacter(scanner, characterDetails, characterStats);
+
+        
         battlePlay(scanner, characterStats, characterInventory);
         saveInventory(characterInventory);
 
@@ -70,15 +73,13 @@ public class PlayGame {
                     if(choice3 == 1){
 
                         itemFound(scanner, characterInventory, characterHp, characterDamage);
+                        System.out.println("After seeing the seeds you keep walking. you trip and hit your head super hard.");
+                        System.out.println("All of the sudden you are waking up in an amazingly comfy bed. You find out you have been asleep for 10 days after battling creatures on an incredible journey!");
 
                     }else{
-                        System.out.println("You decide to keep walking. In the distance you see a empty cottage. Do you want to go in? 1: yes, 2: no");
-                        int choice4 = Integer.parseInt(scanner.nextLine());
-                        if(choice4 == 1){
+                        System.out.println("You decide to keep walking. You come across a ladder that leads up to a tree house.");
+                        System.out.println("You go up the ladder to the treehouse. You open the door and there is an awesome dance party happening with all your wizard and werewolf friend!");
 
-                        }else{
-
-                        }
                     }
 
                 } else {
@@ -89,15 +90,13 @@ public class PlayGame {
                     if(choice3 == 1){
 
                         itemFound(scanner, characterInventory, characterHp, characterDamage);
+                        System.out.println("After seeing the seeds you continue on your journey. You run into a lamp and after rubbing it a genie comes out!!");
+                        System.out.println("You hurry and wish for 3 things. 1. An unlimited supply of Takis, 2. A pet sloth and 3. the power to fly!!");
 
                     }else{
-                        System.out.println("You decide to keep walking. In the distance you see a empty cottage. Do you want to go in? 1: yes, 2: no");
-                        int choice4 = Integer.parseInt(scanner.nextLine());
-                        if(choice4 == 1){
+                        System.out.println("You decide to keep walking. In the distance you see a empty house and walk into it.");
+                        System.out.println("You walk in and take a step. All of the sudden you start falling!! you keep falling for what feels like forever until you land on a fluffy pillow. You end up in a room of trampolines! so much fun");
 
-                        }else{
-
-                        }
                     }
 
                 }
@@ -116,15 +115,14 @@ public class PlayGame {
                     if(choice3 == 1){
 
                         itemFound(scanner, characterInventory, characterHp, characterDamage);
+                        System.out.println("After seeing the seeds you keep walking along. You run into a pile of kittens with a note that says free please help!");
+                        System.out.println("You hurry and toss all of the kittens into your backback. You rush home to get them food and water. You now have 10 cats.");
+
 
                     }else{
-                        System.out.println("You decide to keep walking. In the distance you see a empty cottage. Do you want to go in? 1: yes, 2: no");
-                        int choice4 = Integer.parseInt(scanner.nextLine());
-                        if(choice4 == 1){
+                        System.out.println("You decide to keep walking. In the distance you see a empty cottage and walk into it.");
+                        System.out.println("You open the cottage door to reveal a beautiful city with chocolate river, candycane trees and cotton candy grass. You have never been so happy in your life.");
 
-                        }else{
-
-                        }
                     }
                 } else {
                     System.out.println("You quietly snuck past the sleeping siren");
@@ -134,15 +132,12 @@ public class PlayGame {
                     if(choice3 == 1){
 
                         itemFound(scanner, characterInventory, characterHp, characterDamage);
+                        System.out.println("After seeing the seeds you keep walking along the water. You trip and fall into the water!! ");
+                        System.out.println("All of the sudden your grow a beautiful mermaid tail and can talk to animals!! You swim you way all the water to the ocean and live happy among other sea creatures.");
 
                     }else{
-                        System.out.println("You decide to keep walking. In the distance you see a empty cottage. Do you want to go in? 1: yes, 2: no");
-                        int choice4 = Integer.parseInt(scanner.nextLine());
-                        if(choice4 == 1){
-
-                        }else{
-
-                        }
+                        System.out.println("You decide to keep walking. In the distance you see a random door but it appears nothing is behind it. You go to open the door. ");
+                        System.out.println("You open the door and there is a secret meadow behind it with fruit trees and baskets of the ripest strawberries you have ever seen. This is your new favorite place.");
                     }
 
 
