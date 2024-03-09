@@ -1,46 +1,31 @@
 # Overview
+This is my first ever java project! I wanted to implement the basics of Java into a fun text game.  a game where the user gets to select their path and journey. I was able to accomplish this using a variety of Java built-in tools, if statements and lots of functions! I really loved being able to be creative with this project. I was excited to learn Java because it is used in a lot of video game creation and has been around for so long! 
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
-
-{Provide a description of the software that you wrote to demonstrate the Java language.}
-
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
+When I started this project I wanted to understand the basics of Java. I focused on using variables, expressions, conditionals, loops, functions and data structures to help create my game. Through this project I was able to learn a small amount of Java. It makes me want to learn more about Java and follow other tutorials to expand my knowledge of it. I plan on finding time to continue to learn Java and learn how it is used in the gaming world. 
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used and any libraries.}
+This project was created using Java. I imported a few of Javas preprogrammed code to help create my game:
+Scanner
+ArrayList
+Buffered reader and writer
+File
+File writer
+File reader
+Random
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+- [CodeAcademy](https://www.codecademy.com/learn/java-introduction)
+- [W3Schools](https://www.w3schools.com/java/)
+- [VisualStudioCode](https://code.visualstudio.com/docs/java/java-tutorial)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
+- Figure out how to make is so when your health hits 0 the games instantly ends.
+- Add a timer so that things take a second to load and the player has time to read the events happening. 
+- Implement different classes to hold a vareity of the code so it is not in one class.
 
-- Item 1
-- Item 2
-- Item 3
-
-Project requirements: 
-Variables
-
-Expressions XX (maybe add more??)
-
-Conditionals XX
-
-Loops XX
-
-Functions XX
-
-Classes (maybe make another class for the game??)
 
