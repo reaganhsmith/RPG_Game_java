@@ -3,7 +3,7 @@ This is my first ever java project! I wanted to implement the basics of Java int
 
 When I started this project I wanted to understand the basics of Java. I focused on using variables, expressions, conditionals, loops, functions and data structures to help create my game. Through this project I was able to learn a small amount of Java. It makes me want to learn more about Java and follow other tutorials to expand my knowledge of it. I plan on finding time to continue to learn Java and learn how it is used in the gaming world. 
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/aIUn356hHoU)
 
 # Development Environment
 

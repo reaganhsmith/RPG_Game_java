@@ -1,4 +1,4 @@
 Hair color: pink
-wizard
-Your health: 95
-You do: 16 damage
+werewolf
+Your health: 117
+You do: 8 damage
