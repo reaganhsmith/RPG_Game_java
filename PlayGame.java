@@ -23,21 +23,37 @@ public class PlayGame {
 
         System.out.println(" ");
         Scanner scanner = new Scanner(System.in);
+        /*
+         * CREATING ARRAYS TO HOLD DIFFERENT INFORMATION USED IN THE GAME
+         * the characterdetails holds the things the user selects about their character
+         * character stats is used when they fight another creature so it hold their
+         * health is index 0 and damage at index 1
+         * character invetory holds the items you can collect while playing the game.
+         */
         ArrayList<String> characterDetails = new ArrayList<>();
         ArrayList<Integer> characterStats = new ArrayList<>();
         ArrayList<String> characterInventory = new ArrayList<>();
-        // REQ!! FUNCTION
+        // REQ!! FUNCTION- function to let the user create their charater, add this
+        // character to an array and import it to a text file then display the text file
         createAndDisplayCharacter(scanner, characterDetails, characterStats);
 
-        
+        // Function that runs through the game and the other to display your inventroy
+        // at the end
         battlePlay(scanner, characterStats, characterInventory);
         saveInventory(characterInventory);
 
     }
 
+    /*
+     * BattlePlay function runs through if statements to let the user pick their
+     * course.
+     * depending on what they pick they are taken through an adventure that calls
+     * other functions
+     * to battle creatures or pick items up. Each path has a different story ending.
+     */
+
     public static void battlePlay(Scanner scanner, ArrayList<Integer> characterStats,
             ArrayList<String> characterInventory) {
-        // System.out.print(character);
 
         // Get the character stats from the ARRAY
         int characterHp = characterStats.get(0);
@@ -67,34 +83,44 @@ public class PlayGame {
                     int sirenHP = new Random().nextInt((30 - 10) + 1) + 10;
                     sirenEncounter(scanner, characterHp, characterDamage, characterInventory, sirenHP);
 
-                    System.out.println("You get across the siren and walk along the river for a while. You find a pile of rare seeds. Do you 1: Pick them up or 2: Keep going?");
+                    System.out.println(
+                            "You get across the siren and walk along the river for a while. You find a pile of rare seeds. Do you 1: Pick them up or 2: Keep going?");
                     int choice3 = Integer.parseInt(scanner.nextLine());
-                    if(choice3 == 1){
+                    if (choice3 == 1) {
 
                         itemFound(scanner, characterInventory, characterHp, characterDamage);
-                        System.out.println("After seeing the seeds you keep walking. you trip and hit your head super hard.");
-                        System.out.println("All of the sudden you are waking up in an amazingly comfy bed. You find out you have been asleep for 10 days after battling creatures on an incredible journey!");
+                        System.out.println(
+                                "After seeing the seeds you keep walking. you trip and hit your head super hard.");
+                        System.out.println(
+                                "All of the sudden you are waking up in an amazingly comfy bed. You find out you have been asleep for 10 days after battling creatures on an incredible journey!");
 
-                    }else{
-                        System.out.println("You decide to keep walking. You come across a ladder that leads up to a tree house.");
-                        System.out.println("You go up the ladder to the treehouse. You open the door and there is an awesome dance party happening with all your wizard and werewolf friend!");
+                    } else {
+                        System.out.println(
+                                "You decide to keep walking. You come across a ladder that leads up to a tree house.");
+                        System.out.println(
+                                "You go up the ladder to the treehouse. You open the door and there is an awesome dance party happening with all your wizard and werewolf friend!");
 
                     }
 
                 } else {
                     System.out.println("You tip toed across the sleeping siren without waking her.");
 
-                    System.out.println("You get across the siren and walk along the river for a while. You find a pile of rare seeds. Do you 1: Pick them up or 2: Keep going?");
+                    System.out.println(
+                            "You get across the siren and walk along the river for a while. You find a pile of rare seeds. Do you 1: Pick them up or 2: Keep going?");
                     int choice3 = Integer.parseInt(scanner.nextLine());
-                    if(choice3 == 1){
+                    if (choice3 == 1) {
 
                         itemFound(scanner, characterInventory, characterHp, characterDamage);
-                        System.out.println("After seeing the seeds you continue on your journey. You run into a lamp and after rubbing it a genie comes out!!");
-                        System.out.println("You hurry and wish for 3 things. 1. An unlimited supply of Takis, 2. A pet sloth and 3. the power to fly!!");
+                        System.out.println(
+                                "After seeing the seeds you continue on your journey. You run into a lamp and after rubbing it a genie comes out!!");
+                        System.out.println(
+                                "You hurry and wish for 3 things. 1. An unlimited supply of Takis, 2. A pet sloth and 3. the power to fly!!");
 
-                    }else{
-                        System.out.println("You decide to keep walking. In the distance you see a empty house and walk into it.");
-                        System.out.println("You walk in and take a step. All of the sudden you start falling!! you keep falling for what feels like forever until you land on a fluffy pillow. You end up in a room of trampolines! so much fun");
+                    } else {
+                        System.out.println(
+                                "You decide to keep walking. In the distance you see a empty house and walk into it.");
+                        System.out.println(
+                                "You walk in and take a step. All of the sudden you start falling!! you keep falling for what feels like forever until you land on a fluffy pillow. You end up in a room of trampolines! so much fun");
 
                     }
 
@@ -109,36 +135,44 @@ public class PlayGame {
                     int sirenHP = new Random().nextInt((30 - 10) + 1) + 10;
                     sirenEncounter(scanner, characterHp, characterDamage, characterInventory, sirenHP);
 
-                    System.out.println("You get across the siren and walk along the river for a while. You find a pile of rare seeds. Do you 1: Pick them up or 2: Keep going?");
+                    System.out.println(
+                            "You get across the siren and walk along the river for a while. You find a pile of rare seeds. Do you 1: Pick them up or 2: Keep going?");
                     int choice3 = Integer.parseInt(scanner.nextLine());
-                    if(choice3 == 1){
+                    if (choice3 == 1) {
 
                         itemFound(scanner, characterInventory, characterHp, characterDamage);
-                        System.out.println("After seeing the seeds you keep walking along. You run into a pile of kittens with a note that says free please help!");
-                        System.out.println("You hurry and toss all of the kittens into your backback. You rush home to get them food and water. You now have 10 cats.");
+                        System.out.println(
+                                "After seeing the seeds you keep walking along. You run into a pile of kittens with a note that says free please help!");
+                        System.out.println(
+                                "You hurry and toss all of the kittens into your backback. You rush home to get them food and water. You now have 10 cats.");
 
-
-                    }else{
-                        System.out.println("You decide to keep walking. In the distance you see a empty cottage and walk into it.");
-                        System.out.println("You open the cottage door to reveal a beautiful city with chocolate river, candycane trees and cotton candy grass. You have never been so happy in your life.");
+                    } else {
+                        System.out.println(
+                                "You decide to keep walking. In the distance you see a empty cottage and walk into it.");
+                        System.out.println(
+                                "You open the cottage door to reveal a beautiful city with chocolate river, candycane trees and cotton candy grass. You have never been so happy in your life.");
 
                     }
                 } else {
                     System.out.println("You quietly snuck past the sleeping siren");
 
-                    System.out.println("You get across the siren and walk along the river for a while. You find a pile of rare seeds. Do you 1: Pick them up or 2: Keep going?");
+                    System.out.println(
+                            "You get across the siren and walk along the river for a while. You find a pile of rare seeds. Do you 1: Pick them up or 2: Keep going?");
                     int choice3 = Integer.parseInt(scanner.nextLine());
-                    if(choice3 == 1){
+                    if (choice3 == 1) {
 
                         itemFound(scanner, characterInventory, characterHp, characterDamage);
-                        System.out.println("After seeing the seeds you keep walking along the water. You trip and fall into the water!! ");
-                        System.out.println("All of the sudden your grow a beautiful mermaid tail and can talk to animals!! You swim you way all the water to the ocean and live happy among other sea creatures.");
+                        System.out.println(
+                                "After seeing the seeds you keep walking along the water. You trip and fall into the water!! ");
+                        System.out.println(
+                                "All of the sudden your grow a beautiful mermaid tail and can talk to animals!! You swim you way all the water to the ocean and live happy among other sea creatures.");
 
-                    }else{
-                        System.out.println("You decide to keep walking. In the distance you see a random door but it appears nothing is behind it. You go to open the door. ");
-                        System.out.println("You open the door and there is a secret meadow behind it with fruit trees and baskets of the ripest strawberries you have ever seen. This is your new favorite place.");
+                    } else {
+                        System.out.println(
+                                "You decide to keep walking. In the distance you see a random door but it appears nothing is behind it. You go to open the door. ");
+                        System.out.println(
+                                "You open the door and there is a secret meadow behind it with fruit trees and baskets of the ripest strawberries you have ever seen. This is your new favorite place.");
                     }
-
 
                 }
             }
@@ -154,17 +188,25 @@ public class PlayGame {
 
     }
 
-    public static void itemFound(Scanner scanner, ArrayList<String> characterInventory, int characterHp, int characterDamage) {
+    /*
+     * ITEM FOUND FUNCTION:
+     * this function picks a random number between 1 and two and then goes into a
+     * path based on that number.
+     * This way the path is random and the user can maybe participate.
+     */
+    public static void itemFound(Scanner scanner, ArrayList<String> characterInventory, int characterHp,
+            int characterDamage) {
 
         int randomPath = new Random().nextInt(2) + 1;
         if (randomPath == 1) {
-            System.out.println("OH NO!! It was a trap and giant rattlesnake jumps at you! will you 1: fight or 2: run?");
+            System.out
+                    .println("OH NO!! It was a trap and giant rattlesnake jumps at you! will you 1: fight or 2: run?");
             int choice4 = Integer.parseInt(scanner.nextLine());
-            if(choice4 == 1){
+            if (choice4 == 1) {
                 int snakeHp = new Random().nextInt((20 - 10) + 1) + 10;
                 snakeEncounter(scanner, characterHp, characterDamage, characterInventory, snakeHp);
 
-            }else{
+            } else {
                 System.out.println("You got away successfully and ");
                 int randomAmount = new Random().nextInt(20) + 1;
                 String specialSeeds;
@@ -182,27 +224,37 @@ public class PlayGame {
                         .println(" ");
 
             }
- 
+
         } else {
             int randomAmount = new Random().nextInt(20) + 1;
-                String specialSeeds;
-                if (randomAmount == 1) {
-                    specialSeeds = randomAmount + " seeds";
-                } else {
-                    specialSeeds = randomAmount + " seeds";
-                }
-                characterInventory.add(specialSeeds);
+            String specialSeeds;
+            if (randomAmount == 1) {
+                specialSeeds = randomAmount + " seeds";
+            } else {
+                specialSeeds = randomAmount + " seeds";
+            }
+            characterInventory.add(specialSeeds);
 
-                System.out
-                        .println("You picked up: "
-                                + specialSeeds);
-                System.out
-                        .println(" ");
+            System.out
+                    .println("You picked up: "
+                            + specialSeeds);
+            System.out
+                    .println(" ");
 
         }
 
     }
 
+    /*
+     * ENCOUNTER FUNCTIONS!!!
+     * all the encounter functions are very similar. The set an attach amount for
+     * that creature and then
+     * pick a random number to determine the path for the user. Based on that the
+     * creature or the user take damage
+     * until the creature is defeated and the user can pick up an item. They can
+     * also run at any point but might not
+     * be able to escape
+     */
     public static void snakeEncounter(Scanner scanner, int characterHp, int characterDamage,
             ArrayList<String> characterInventory, int snakeHP) {
         int snakeAttack = new Random().nextInt((40 - 20) + 1) + 20;
@@ -240,7 +292,8 @@ public class PlayGame {
                 } else {
                     randomPath = new Random().nextInt(2) + 1;
                     if (randomPath == 1) {
-                        System.out.println("You have never ran so fast in your life! You were able to get away from the snake.");
+                        System.out.println(
+                                "You have never ran so fast in your life! You were able to get away from the snake.");
                     } else {
                         System.out.println("You were too slow!");
                         snakeEncounter(scanner, characterHp, characterDamage, characterInventory, snakeHP);
@@ -265,7 +318,7 @@ public class PlayGame {
             }
         }
 
-    } 
+    }
 
     public static void sirenEncounter(Scanner scanner, int characterHp, int characterDamage,
             ArrayList<String> characterInventory, int sirenHP) {
@@ -392,6 +445,17 @@ public class PlayGame {
 
     }
 
+    /*
+     * CREATE AND DISPLAY CHARACTER FUNCTION
+     * this function is used to ask for the users input in determining their
+     * character.
+     * If they pick werewolf they have a slightly elevated health but do less
+     * damage. Adds what they
+     * pcik to the characterdetails and characterstats arrayto be used later in the
+     * game. Then it adds
+     * this array to a text file an then reads that text file back to the user so
+     * they can see their character
+     */
     public static void createAndDisplayCharacter(Scanner scanner, ArrayList<String> characterDetails,
             ArrayList<Integer> characterStats) {
         // REQ! DATA STRUCTURE FROM JAVA FRAMEWORK
@@ -437,6 +501,12 @@ public class PlayGame {
 
     }
 
+    /*
+     * SAVE CHARACTER
+     * This function creates a new text file called characterinfo and adds each item
+     * of the characterdetails
+     * array to a new line on the text file to later be displayed for the user
+     */
     private static void saveCharacter(ArrayList<String> Character) {
         // Specify the directory and file name
         String directoryPath = ".";
@@ -453,6 +523,11 @@ public class PlayGame {
         }
     }
 
+    /*
+     * DISPLAY FILE NAME
+     * this function gets the file name and displays each like of that file for the
+     * user.
+     */
     private static void displayFile(String type, String file) {
         System.out.println("Your " + type + ": ");
 
@@ -469,6 +544,12 @@ public class PlayGame {
 
         System.out.println(" ");
     }
+
+    /*
+     * SAVE INVENTORY
+     * this function does the same thing as savecharacter but for the
+     * characterinventory array instead.
+     */
 
     private static void saveInventory(ArrayList<String> characterInventory) {
         // Specify the directory and file name
